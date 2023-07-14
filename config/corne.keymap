@@ -40,7 +40,7 @@
 //                   |  (  |  0  |  )  |   |     |     |     |
                         bindings = <
    &kp TILDE &kp EXCL  &kp N7 &kp N8 &kp N9 &kp AT      &kp ASTRK &kp LBRC  &kp RBRC &kp MINUS &kp EQUAL &kp PLUS
-   &kp LCTRL &kp QMARK &kp N4 &kp N5 &kp N6 &kp AMPS    &kp PRCNT &kp LBKT  &kp RBKT &kp RBKT  &kp BSLH  &kp PIPE
+   &kp LCTRL &kp QMARK &kp N4 &kp N5 &kp N6 &kp AMPS    &kp PRCNT &kp LBKT  &kp RBKT &kp RPAR  &kp BSLH  &kp PIPE
    &kp GRAVE &kp POUND &kp N1 &kp N2 &kp N3 &kp UNDER   &kp DLLR  &kp CARET &none &none &none &none
                             &kp LPAR &kp N0 &kp RPAR    &none &none &none
                         >;
@@ -54,9 +54,9 @@
 // |      |     | BT1 | BT2 | BT3 |     |   | HOME|PG_DN|PG_UP| END | INS |     |
 //                    |     |     |BTCRL|   |     |     |     |
                         bindings = <
-   &none     &none &none        &none        &none        &none   &kp ASTRK &kp LBRC  &kp RBRC  &kp MINUS &kp EQUAL &kp PLUS
-   &kp LCTRL &none &bt BT_SEL 3 &bt BT_SEL 4 &none        &none   &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none     &kp CAPS
-   &none     &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none   &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp INS   &none
+   &none     &none &none        &none        &none        &none   &kp C_PREV &kp C_VOL_DOWN  &kp C_VOL_UP  &kp C_NEXT &kp C_PP &kp C_MUTE
+   &kp LCTRL &none &bt BT_SEL 3 &bt BT_SEL 4 &none        &none   &kp LEFT   &kp DOWN        &kp UP        &kp RIGHT  &none    &kp CAPS
+   &none     &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none   &kp HOME   &kp PG_DN       &kp PG_UP     &kp END    &kp INS  &none
                                          &none &none &bt BT_CLR   &none &none &none
                         >;
                         label = "Raise";
