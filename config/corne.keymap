@@ -17,45 +17,64 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                base_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | DEL |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | FUNC  |
-//           | SHFT_GUI | LWR_ESC | SPC |   | ENT | RSE_BKSP | SHFT |
+// |  TAB|  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  DEL|
+// | CTRL|  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '  |
+// | SHFT|  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | FUNC|
+//     | SHFT_GUI | LWR_ESC | LALT_SPC |   | ENT | RSE_BKSP | SHFT |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp DEL
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo FUNC
-     &kp LGUI &lt LOWER ESC &mt LALT SPACE   &kp RET &lt RAISE BSPC &kp LSHFT
+     &kp LGUI &lt RAISE ESC &mt LALT SPACE   &kp RET &lt LOWER BSPC &kp LSHFT
                         >;
+                        label = "Base";
                 };
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  ~  |  !  |  7  |  8  |  9  |  @  |   |  *  |  {  |  }  |  -  |  =  |  +  |
+// | CTRL|  ?  |  4  |  5  |  6  |  &  |   |  %  |  [  |  ]  |  )  |  \  | "|" |
+// |  `  |  #  |  1  |  2  |  3  |  _  |   |  $  |  ^  |     |     |     |     |
+//                   |  (  |  0  |  )  |   |     |     |     |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp TILDE &kp EXCL  &kp N7 &kp N8 &kp N9 &kp AT      &kp ASTRK &kp LBRC  &kp RBRC &kp MINUS &kp EQUAL &kp PLUS
+   &kp LCTRL &kp QMARK &kp N4 &kp N5 &kp N6 &kp AMPS    &kp PRCNT &kp LBKT  &kp RBKT &kp RBKT  &kp BSLH  &kp PIPE
+   &kp GRAVE &kp POUND &kp N1 &kp N2 &kp N3 &kp UNDER   &kp DLLR  &kp CARET &none &none &none &none
+                            &kp LPAR &kp N0 &kp RPAR    &none &none &none
                         >;
+                        label = "Lower";
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  7  |  8  |  9  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |  0  |  4  |  5  |  6  |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |  1  |  2  |  3  |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |      |     |     |     |     |     |   | PREV|VOLDN|VOLUP| NEXT|PL_PA| MUTE|
+// | CTRL |     | BT4 | BT5 |     |     |   | LFT | DOWN|  UP |RIGHT|     | CAPS|
+// |      |     | BT1 | BT2 | BT3 |     |   | HOME|PG_DN|PG_UP| END | INS |     |
+//                    |     |     |BTCRL|   |     |     |     |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp N7 &kp N8  &kp N9    &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &kp 0    &kp N4 &kp N5  &kp N6    &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &kp N1 &kp N2  &kp N3    &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &none     &none &none        &none        &none        &none   &kp ASTRK &kp LBRC  &kp RBRC  &kp MINUS &kp EQUAL &kp PLUS
+   &kp LCTRL &none &bt BT_SEL 3 &bt BT_SEL 4 &none        &none   &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none     &kp CAPS
+   &none     &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none   &kp HOME  &kp PG_DN &kp PG_UP &kp END   &kp INS   &none
+                                         &none &none &bt BT_CLR   &none &none &none
                         >;
+                        label = "Raise";
+                };
+
+                function_layer {
+// -----------------------------------------------------------------------------------------
+// |      | F12 |  F7 |  F8 |  F9 |     |   |     |     |     |     |     |     |
+// | CTRL | F11 |  F4 |  F5 |  F6 |     |   | LFT | DWN |  UP | RGT |     |     |
+// |      | F10 |  F1 |  F2 |  F3 |     |   |     |     |     |     |     |     |
+//                    |     |     |     |   |     |     |     |
+                        bindings = <
+   &none     &kp F12 &kp F7 &kp F8 &kp F9 &none   &none    &none    &none  &none     &none &none
+   &kp LCTRL &kp F11 &kp F4 &kp F5 &kp F6 &none   &kp LEFT &kp DOWN &kp UP &kp RIGHT &none &none
+   &none     &kp F10 &kp F1 &kp F2 &kp F3 &none   &none    &none    &none  &none     &none &none
+                              &none &none &none   &none &none &none
+                        >;
+                        label = "Func";
                 };
         };
 };
