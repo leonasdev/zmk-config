@@ -2,11 +2,11 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: AakashDabas
-      url-base: https://github.com/AakashDabas
+    - name: leonasdev
+      url-base: https://github.com/leonasdev
   projects:
     - name: zmk
-      remote: AakashDabas
+      remote: leonasdev
       revision: animated_widgets
       import: app/west.yml
   self:
