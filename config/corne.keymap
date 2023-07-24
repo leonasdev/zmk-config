@@ -16,7 +16,7 @@
 &lt {
     flavor = "hold-preffered";
     tapping-term-ms = <200>;
-}
+};
 
 / {
         keymap {
