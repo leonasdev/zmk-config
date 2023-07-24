@@ -14,7 +14,7 @@
 #define FUNC    3
 
 &lt {
-    flavor = "hold-preffered";
+    flavor = "hold-preferred";
     tapping-term-ms = <200>;
 };
 
