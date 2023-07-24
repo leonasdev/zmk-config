@@ -13,6 +13,11 @@
 #define RAISE   2
 #define FUNC    3
 
+&lt {
+    flavor = "hold-preffered";
+    tapping-term-ms = <200>;
+}
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -22,7 +27,7 @@
 // |  TAB|  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |  DEL|
 // | CTRL|  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '  |
 // | SHFT|  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | FUNC|
-//     | SHFT_GUI | LWR_ESC | LALT_SPC |   | ENT | RSE_BKSP | SHFT |
+//   | SHFT_GUI | RAISE_ESC | LALT_SPC |   | ENT | LOWER_BKSP | SHFT |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp DEL
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
@@ -34,15 +39,15 @@
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  ~  |  !  |  7  |  8  |  9  |  @  |   |  *  |  {  |  }  |  -  |  =  |  +  |
-// | CTRL|  ?  |  4  |  5  |  6  |  &  |   |  %  |  [  |  ]  |  )  |  \  | "|" |
-// |  `  |  #  |  1  |  2  |  3  |  _  |   |  $  |  ^  |     |     |     |     |
-//                   |  (  |  0  |  )  |   |     |     |     |
+// |  ~  |  !  |  7  |  8  |  9  |  @  |   |  *  |  (  |  )  |  -  |  =  |  +  |
+// | CTRL|  ?  |  4  |  5  |  6  |  &  |   |  %  |  {  |  }  |  ^  |  \  | "|" |
+// |  `  |  #  |  1  |  2  |  3  |  _  |   |  $  |  [  |  ]  |     |     |     |
+//                   |  <  |  0  |  >  |   | SHFT |     | ALT |
                         bindings = <
-   &kp TILDE &kp EXCL  &kp N7 &kp N8 &kp N9 &kp AT      &kp ASTRK &kp LBRC  &kp RBRC &kp MINUS &kp EQUAL &kp PLUS
-   &kp LCTRL &kp QMARK &kp N4 &kp N5 &kp N6 &kp AMPS    &kp PRCNT &kp LBKT  &kp RBKT &kp RPAR  &kp BSLH  &kp PIPE
-   &kp GRAVE &kp POUND &kp N1 &kp N2 &kp N3 &kp UNDER   &kp DLLR  &kp CARET &none &none &none &none
-                            &kp LPAR &kp N0 &kp RPAR    &none &none &none
+   &kp TILDE &kp EXCL  &kp N7 &kp N8 &kp N9 &kp AT      &kp ASTRK &kp LPAR  &kp RPAR &kp MINUS &kp EQUAL &kp PLUS
+   &kp LCTRL &kp QMARK &kp N4 &kp N5 &kp N6 &kp AMPS    &kp PRCNT &kp LBRC  &kp RBRC &kp CARET &kp BSLH  &kp PIPE
+   &kp GRAVE &kp POUND &kp N1 &kp N2 &kp N3 &kp UNDER   &kp DLLR  &kp LBKT  &kp RBKT &none &none &none
+                            &kp LT &kp N0 &kp GT    &kp LSHFT &none &kp LALT
                         >;
                         label = "NUMS";
                 };
