@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/leonasdev
   projects:
     - name: zmk
-      remote: leonasdev
-      revision: animated_widgets
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config
