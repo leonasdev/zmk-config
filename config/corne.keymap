@@ -20,6 +20,7 @@
 
 &mt {
     quick-tap-ms = <200>;
+    hold-while-undecided;
 };
 
 / {
