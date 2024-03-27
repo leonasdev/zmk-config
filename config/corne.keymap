@@ -36,10 +36,10 @@
             rpilt: require_prior_idle_layer_tap {
               compatible = "zmk,behavior-hold-tap";
               #binding-cells = <2>;
-              flavor = "tap-preferred";
+              flavor = "hold-preferred";
               tapping-term-ms = <200>;
               bindings = <&mo>, <&kp>;
-              require-prior-idle-ms = <125>;
+              require-prior-idle-ms = <200>;
             };
         };
 
