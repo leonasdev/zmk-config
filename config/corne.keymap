@@ -41,6 +41,14 @@
               bindings = <&mo>, <&kp>;
               require-prior-idle-ms = <200>;
             };
+            plt: positional_layer_tap {
+              compatible = "zmk,behavior-hold-tap";
+              #binding-cells = <2>;
+              flavor = "hold-preferred";
+              tapping-term-ms = <200>;
+              bindings = <&mo>, <&kp>;
+              hold-trigger-key-positions = <37 38 39 40 41 42>; // all thumb keys
+            };
         };
 
         keymap {
@@ -56,7 +64,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp DEL
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo FUNC
-  &kp LGUI &lt RAISE ESC &mt LALT SPACE   &rmt LSHFT RET &lt LOWER BSPC &kp LSHFT
+    &kp LGUI &plt RAISE ESC &mt LALT SPACE   &rmt LSHFT RET &lt LOWER BSPC &kp LSHFT
                         >;
                         label = "BASE";
                 };
@@ -78,15 +86,15 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     |     |     |     |BTCLR|   | PREV|VOLDN|VOLUP| NEXT|PL_PA| MUTE|
+// |     |     |     |     |     |BTCLR|   |     |     |     |     |     |     |
 // | CTRL|     | BT4 | BT5 |     |     |   | LFT | DOWN|  UP |RIGHT|     | CAPS|
 // | SHFT|     | BT1 | BT2 | BT3 |     |   | HOME|PG_DN|PG_UP| END | INS |     |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-   &none     &none &none        &none        &none   &bt BT_CLR   &kp C_PREV &kp C_VOL_DN    &kp C_VOL_UP  &kp C_NEXT &kp C_PP &kp C_MUTE
-   &kp LCTRL &none &bt BT_SEL 3 &bt BT_SEL 4 &none        &none   &kp LEFT   &kp DOWN        &kp UP        &kp RIGHT  &none    &kp CAPS
-   &kp LSHFT &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none   &kp HOME   &kp PG_DN       &kp PG_UP     &kp END    &kp INS  &none
-                                              &none &none &none   &none &none &trans
+   &none     &none &none        &none        &none   &bt BT_CLR   &none    &none     &none     &none     &none   &none
+   &kp LCTRL &none &bt BT_SEL 3 &bt BT_SEL 4 &none        &none   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none   &kp CAPS
+   &kp LSHFT &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none   &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp INS &none
+                                              &none &none &none   &none &none &none
                         >;
                         label = "NAVM";
                 };
