@@ -39,7 +39,7 @@
               flavor = "hold-preferred";
               tapping-term-ms = <200>;
               bindings = <&mo>, <&kp>;
-              //require-prior-idle-ms = <200>;
+              require-prior-idle-ms = <200>;
             };
         };
 
@@ -56,7 +56,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp DEL
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo FUNC
-  &kp LGUI &rpilt RAISE ESC &mt LALT SPACE   &rmt LSHFT RET &lt LOWER BSPC &kp LSHFT
+  &kp LGUI &lt RAISE ESC &mt LALT SPACE   &rmt LSHFT RET &lt LOWER BSPC &kp LSHFT
                         >;
                         label = "BASE";
                 };
