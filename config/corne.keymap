@@ -73,12 +73,12 @@
 // -----------------------------------------------------------------------------------------
 // |  ~  |  !  |  7  |  8  |  9  |  @  |   |  *  |  (  |  )  |  -  |  =  |  +  |
 // | CTRL|  ?  |  4  |  5  |  6  |  &  |   |  %  |  {  |  }  |  ^  |  \  | "|" |
-// |  `  |  #  |  1  |  2  |  3  |  _  |   |  $  |  [  |  ]  |     |     |     |
+// |  `  |  #  |  1  |  2  |  3  |  _  |   |  $  |  [  |  ]  |  .  |  /  |     |
 //                   |  <  |  0  |  >  |   | SHFT |     | ALT |
                         bindings = <
    &kp TILDE &kp EXCL  &kp N7 &kp N8 &kp N9 &kp AT      &kp ASTRK &kp LPAR  &kp RPAR &kp MINUS &kp EQUAL &kp PLUS
    &kp LCTRL &kp QMARK &kp N4 &kp N5 &kp N6 &kp AMPS    &kp PRCNT &kp LBRC  &kp RBRC &kp CARET &kp BSLH  &kp PIPE
-   &kp GRAVE &kp POUND &kp N1 &kp N2 &kp N3 &kp UNDER   &kp DLLR  &kp LBKT  &kp RBKT &none &none &none
+   &kp GRAVE &kp POUND &kp N1 &kp N2 &kp N3 &kp UNDER   &kp DLLR  &kp LBKT  &kp RBKT &kp DOT &kp FSLH &none
                             &kp LT &kp N0 &kp GT    &kp LSHFT &none &kp LALT
                         >;
                         label = "NUMS";
